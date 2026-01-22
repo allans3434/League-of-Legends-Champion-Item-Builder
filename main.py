@@ -1,12 +1,18 @@
+import os
+import sys
 import tkinter as tk
 from PIL import Image, ImageTk
 import requests
 from bs4 import BeautifulSoup
 
+def resource_path(relative_path):
+    base_path = getattr(sys, "_MEIPASS", os.path.abspath("."))
+    return os.path.join(base_path, relative_path)
+
 CHAMPIONS = {
-    "Ahri": "images/ahri.png",
-    "Garen": "images/garen.png",
-    "Jinx": "images/jinx.png",
+    "Ahri": resource_path("images/ahri.png"),
+    "Garen": resource_path("images/garen.png"),
+    "Jinx": resource_path("images/jinx.png"),
 }
 
 def get_items_from_opgg(champion):
