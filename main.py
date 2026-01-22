@@ -93,8 +93,7 @@ class LoLApp(tk.Tk):
 
     def show_items(self, champion):
         self.text.delete("1.0", tk.END)
-        self.text.insert(tk.END, f"▶ {champion} – ieteiktie itemi:
-
+        self.text.insert(tk.END, f" {champion} - ieteiktie itemi:\n")
 ")
         items = get_items_from_opgg(champion)
         for item in items:
